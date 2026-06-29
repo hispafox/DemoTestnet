@@ -4,7 +4,7 @@ using DemoTestnet.Models;
 using DemoTestnet.Services;
 using Microsoft.EntityFrameworkCore;
 
-namespace DemoTestnet.Tests
+namespace DemoTestnet.Tests.Integration
 {
     public class FlujoServiceTests
     {
