@@ -27,7 +27,7 @@ namespace DemoTestnet.Tests.Integration
             using var context = CreateContext(
                 new Flujo { Codigo = "A", Estado = Constants.Strings.Aprobaciones.Flujo_Estado_Activo },
                 new Flujo { Codigo = "B", Estado = Constants.Strings.Aprobaciones.Flujo_Estado_Activo });
-            var service = new FlujoService(context);
+            var service = new FlujoService(context);  // SUT
 
             // Act
             var result = service.GetFlujoActualPorCodigo("A");
