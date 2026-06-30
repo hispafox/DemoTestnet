@@ -8,6 +8,30 @@ namespace DemoTestnet.Tests.Domain
         private const string Activo = Constants.Strings.Aprobaciones.Flujo_Estado_Activo;
 
         [Fact]
+        public void Codigo_FlujoNuevo_TieneValorPorDefecto()
+        {
+            // El valor por defecto vive en el MODELO, no en el builder. El FlujoBuilder pone
+            // su propio Codigo ("FLUJO-TEST"), así que no sirve para comprobar este default:
+            // hay que instanciar el modelo directo.
+            // Arrange / Act
+            var flujo = new Flujo();
+
+            // Assert
+            Assert.Equal(string.Empty, flujo.Codigo);
+        }
+
+        [Fact]
+        public void Estado_FlujoNuevo_TieneValorPorDefecto()
+        {
+            // Mismo punto que Codigo: el default vive en el modelo, no en el builder.
+            // Arrange / Act
+            var flujo = new Flujo();
+
+            // Assert
+            Assert.Equal(string.Empty, flujo.Estado);
+        }
+
+        [Fact]
         public void EsHistorico_ConFechaHistorico_DevuelveTrue()
         {
             // Arrange
